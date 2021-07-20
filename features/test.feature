@@ -1,3 +1,3 @@
 Feature: Open Site
-    Scenario:
-        Given ('I Open the youtube homepage')
+Scenario: Open Youtube
+Given I Open the youtube homepage
