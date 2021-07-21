@@ -27,6 +27,5 @@ Then("Submit form register") do
     urlNya = driver.current_url
     puts urlNya
     # expect(urlNya).to eq("https://www.amazon.com/ap/cvf/request?arb=834abbfa-79d0-4455-86fc-87171b318e30")
-    expect(urlNya).to all(match(https://www.amazon.com/ap/cvf/request?arb))
-    sleep(5)
+    expect(urlNya).to match(/request?arb/)
 end
