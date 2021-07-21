@@ -13,10 +13,9 @@ Then("Open Login Page") do
     sleep(1)
     driver.find_element(:xpath,'//*[@id="ap_email"]').send_keys 'hendrasimz92@gmail.com'
 end
-
 Then ("Entry Email and Password")do
     driver.find_element(:xpath, '//*[@id="continue"]').click
-    driver.find_element(:xpath,'//*[@id="ap_password"]').send_keys 'Simangunsong7s7!'
+    driver.find_element(:xpath,'//*[@id="ap_password"]').send_keys 'Simangunsong77!'
 end
 Then("Submit Form Login") do
     driver.find_element(:xpath, '//*[@id="signInSubmit"]').click

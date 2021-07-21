@@ -4,5 +4,5 @@ Feature: Open Amazon Site
     Scenario:
         Given Open Amazon Site
         Then Open Login Page
-        Then  Entry Email and Password
+        Then Entry Email and Password
         Then Submit Form Login
