@@ -8,7 +8,7 @@ Given ("Open Amazon Site") do
     driver.navigate.to "https://amazon.com/"
 end
 
-Then("Open Register Page") do 
+When("Open Register Page") do 
     driver.find_element(:xpath,'//*[@id="nav-link-accountList"]/span').click
     driver.find_element(:xpath,'//*[@id="createAccountSubmit"]').click
 end
@@ -27,5 +27,5 @@ Then("Submit form register") do
     urlNya = driver.current_url
     puts urlNya
     # expect(urlNya).to eq("https://www.amazon.com/ap/cvf/request?arb=834abbfa-79d0-4455-86fc-87171b318e30")
-    expect(urlNya).to match(/request?arb/)
+    expect(urlNya).to match(/request/)
 end
