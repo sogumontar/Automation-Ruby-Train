@@ -6,13 +6,11 @@ driver = Selenium::WebDriver.for:chrome
 
 Given ("Open Amazon Site") do
     driver.navigate.to "https://amazon.com/"
-end
-
-When("Open Login Page") do
     driver.find_element(:xpath,'//*[@id="nav-link-accountList"]/span').click
     sleep(1)
 end
-Then ("Entry valid Email and Password") do
+
+When ("Entry valid Email and Password") do
     driver.find_element(:xpath,'//*[@id="ap_email"]').send_keys 'hendrasimz92@gmail.com'
     driver.find_element(:xpath, '//*[@id="continue"]').click
     driver.find_element(:xpath,'//*[@id="ap_password"]').send_keys 'Simangunsong77!'
@@ -22,15 +20,17 @@ Then("Submit Form Login") do
     
     urlNya = driver.current_url
     puts urlNya
-    expect(urlNya).to eq("https://www.amazon.com/?ref_=nav_ya_signin&")
+    expect(urlNya).to eq("https://www.amazon.com/?ref_=nav_ya_signin&") 
     
 end
 
-When("I Open Login Page") do
+Given ("I Open Amazon Site") do
+    driver.navigate.to "https://amazon.com/"
     driver.find_element(:xpath,'//*[@id="nav-link-accountList"]/span').click
     sleep(1)
 end
-Then ("Entry valid Email and invalid Password") do
+
+When ("Entry valid Email and invalid Password") do
     driver.find_element(:xpath,'//*[@id="ap_email"]').send_keys 'hendrasimz92@gmail.com'
     driver.find_element(:xpath, '//*[@id="continue"]').click
     driver.find_element(:xpath,'//*[@id="ap_password"]').send_keys 'Simangunsong'
