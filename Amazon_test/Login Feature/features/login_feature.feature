@@ -1,8 +1,13 @@
-@AdvancedSearch
+@LoginAmazon
 Feature: Open Amazon Site
-    @MainMenu
+    @LoginSuccess
     Scenario:
         Given Open Amazon Site
-        Then Open Login Page
-        Then Entry Email and Password
+        When Entry valid Email and Password
         Then Submit Form Login
+
+    @LoginFailed
+    Scenario:
+        Given I Open Amazon Site
+        When Entry valid Email and invalid Password
+        Then I Submit Form Login
