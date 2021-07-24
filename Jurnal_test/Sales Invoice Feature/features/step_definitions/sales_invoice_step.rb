@@ -47,7 +47,7 @@ Then("I Select dropdown customer with add new customer") do
     driver.find_element(:xpath,'//*[@id="s2id_transaction_person_id"]/a/span[2]/b').click
     sleep(1)
     driver.find_element(:xpath,'//*[@id="select2-result-label-0"]').click
-    sleep(5)
+    sleep(5) 
 end
 
 Then("I Enter valid data in require fields") do
