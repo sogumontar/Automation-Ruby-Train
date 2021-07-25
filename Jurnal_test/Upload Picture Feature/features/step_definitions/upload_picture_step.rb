@@ -19,13 +19,15 @@ When("Login with email and password") do
     driver.find_element(:xpath, '//*[@id="btn-jurnal"]').click 
 end
 
-Then("I Input Unit Price") do
+Then("I Upload Picture") do
     # Pilih menu sales
     driver.find_element(:xpath,'//*[@id="vnav-sales-link"]/span').click
     # Pilih button sales
     driver.find_element(:xpath,'/html/body/div[2]/div[4]/nav/div[1]/ul/li[1]/a').click
-    # Input unit price
-    driver.find_element(:xpath,'//*[@id="transaction_transaction_lines_attributes_0_rate"]').send_keys '500000'
+    # Upload gambar
+    driver.find_element(:xpath,'/html/body/div[2]/div[4]/div[4]/section/div/div/form/div[7]/div[2]/div/div[3]/div[3]/div[1]/span').click
+    # Isi transaction due date
+    driver.find_element(:xpath,'//*[@id="transaction_due_date"]').send_keys '24/07/2021'
 
     urlNya = driver.current_url
     puts urlNya

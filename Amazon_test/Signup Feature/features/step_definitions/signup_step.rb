@@ -18,7 +18,6 @@ Then("Enter valid data in require fields") do
     driver.find_element(:xpath,'//*[@id="ap_email"]').send_keys 'indahtrivena124@gmail.com'
     driver.find_element(:xpath,'//*[@id="ap_password"]').send_keys 'indahtriv008'
     driver.find_element(:xpath,'//*[@id="ap_password_check"]').send_keys 'indahtriv008'
-    sleep(5)
 end
 
 Then("Submit form register") do
@@ -44,7 +43,6 @@ Then("I Enter invalid password in require fields") do
     driver.find_element(:xpath,'//*[@id="ap_email"]').send_keys 'indahtrivena124@gmail.com'
     driver.find_element(:xpath,'//*[@id="ap_password"]').send_keys 'indah'
     driver.find_element(:xpath,'//*[@id="ap_password_check"]').send_keys 'indah'
-    sleep(5)
 end
 
 Then("I Submit form register") do

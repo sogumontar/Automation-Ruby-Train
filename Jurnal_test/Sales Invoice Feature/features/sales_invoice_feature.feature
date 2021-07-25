@@ -11,5 +11,6 @@ Feature: Open Jurnal Site
         Given I Open Jurnal Site
         When I Login with email and password
         Then I Select dropdown customer with add new customer
+        Then click dropdown
         Then I Enter valid data in require fields
         Then I Submit form new customer
