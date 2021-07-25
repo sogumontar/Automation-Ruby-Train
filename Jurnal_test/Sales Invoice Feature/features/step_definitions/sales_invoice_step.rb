@@ -9,16 +9,22 @@ Given ("Open Jurnal Site") do
 end
 
 When("Login with email and password") do 
+    # Masukkan email
     driver.find_element(:xpath,'//*[@id="user_email"]').send_keys 'indahtrivena124@gmail.com'
+    # Masukkan password
     driver.find_element(:xpath,'//*[@id="user_password"]').send_keys 'indahtriv008'
+    # Pilih button sign in
     driver.find_element(:xpath, '//*[@id="new-signin-button"]').click
+    # Pilih button jurnal
     driver.find_element(:xpath, '//*[@id="btn-jurnal"]').click 
 end
 
 Then("I Select dropdown existing customer on the list") do
+    # Pilih menu sales
     driver.find_element(:xpath,'//*[@id="vnav-sales-link"]/span').click
-    driver.find_element(:xpath,'//*[@id="tab-1"]/div[2]/div/div[2]/a[1]').click
-    
+    # Pilih button sales
+    driver.find_element(:xpath,'/html/body/div[2]/div[4]/nav/div[1]/ul/li[1]/a').click
+    # Pilih customer
     dropdown = driver.find_element(:xpath,'//*[@id="s2id_transaction_person_id"]/a/span[2]/b')
     option = dropdown.find_elements(tag_name: 'option')
     option.each { |option| option.click if option.text == 'indah (Pelanggan)' }
@@ -26,7 +32,6 @@ Then("I Select dropdown existing customer on the list") do
     urlNya = driver.current_url
     puts urlNya
     expect(urlNya).to include("https://sandbox.jurnal.id/invoices/new")
-    sleep(5)
 end
 
 Given ("I Open Jurnal Site") do
@@ -34,28 +39,37 @@ Given ("I Open Jurnal Site") do
 end
 
 When("I Login with email and password") do 
+    # Masukkan email
     driver.find_element(:xpath,'//*[@id="user_email"]').send_keys 'indahtrivena124@gmail.com'
+    # Masukkan password
     driver.find_element(:xpath,'//*[@id="user_password"]').send_keys 'indahtriv008'
+    # Pilih button sign in
     driver.find_element(:xpath, '//*[@id="new-signin-button"]').click
+    # Pilih button jurnal
     driver.find_element(:xpath, '//*[@id="btn-jurnal"]').click 
 end
 
 Then("I Select dropdown customer with add new customer") do
+    # Pilih menu sales
     driver.find_element(:xpath,'//*[@id="vnav-sales-link"]/span').click
-    driver.find_element(:xpath,'//*[@id="tab-1"]/div[2]/div/div[2]/a[1]').click
-    
+    # Pilih button sales
+    driver.find_element(:xpath,'/html/body/div[2]/div[4]/nav/div[1]/ul/li[1]/a').click
     driver.find_element(:xpath,'//*[@id="s2id_transaction_person_id"]/a/span[2]/b').click
-    sleep(1)
+end
+
+Then ("click dropdown") do
     driver.find_element(:xpath,'//*[@id="select2-result-label-0"]').click
-    sleep(5) 
 end
 
 Then("I Enter valid data in require fields") do
+    # Masukkan nama customer
     driver.find_element(:xpath,'//*[@id="person_display_name"]').send_keys 'Indah Trivena'
+    # Masukkan email customer
     driver.find_element(:xpath,'//*[@id="person_email"]').send_keys 'indahtrivena359@gmail.com'
+    # Masukkan alamat customer
     driver.find_element(:xpath,'//*[@id="person_billing_address"]').send_keys 'Tarutung'
-    driver.find_element(:xpath,'//*[@id="person_phone"]').send_keys '0895346050317'            
-    sleep(5)
+    # Masukkan nomor telepon customer
+    driver.find_element(:xpath,'//*[@id="person_phone"]').send_keys '0895346050317'
 end
 
 Then("I Submit form new customer") do
