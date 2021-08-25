@@ -20,3 +20,11 @@
       Then Go To Login Page
       Then Input Wrong Password
       Then Compare Failed Login
+
+    @SearchSuccess
+    Scenario:
+      Given Open Bukalapak
+      Then Go To Login Page
+      Then Input True Password
+      Then Go To Search
+      Then Compare After Search

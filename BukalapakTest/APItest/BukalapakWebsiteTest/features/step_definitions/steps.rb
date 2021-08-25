@@ -59,4 +59,15 @@ Then("Compare Failed Login") do
   expect(urlNya).to eq("https://accounts.bukalapak.com/login")
 end
 
+Then("Go To Search") do
+
+  driver.find_element(:xpath, '//*[@id="v-omnisearch__input"]').send_keys 'Redmi 9A'
+  driver.find_element(:xpath, '//*[@id="v-omnisearch"]/button').click
+end
+
+Then("Compare After Search") do
+  urlNya = driver.current_url
+  expect(urlNya) == ("https://www.bukalapak.com/products?from=omnisearch&from_keyword_history=false&search%5Bkeywords%5D=redmi%209a&search_source=omnisearch_keyword&source=navbar")
+end
+
 
