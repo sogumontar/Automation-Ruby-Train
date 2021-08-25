@@ -2,7 +2,7 @@ require 'selenium-webdriver'
 require 'rubygems'
 require 'rspec'
 
-driver = Selenium::WebDriver.for:chrome
+driver = Selenium::WebDriver.for :chrome
 
 Given ("Open Amazon Site") do
     driver.navigate.to "https://amazon.com/"
