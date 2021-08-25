@@ -11,4 +11,12 @@
     Scenario:
       Given Open Bukalapak
       Then  Go To Login Page
+      Then  Input True Password
       Then Compare After Login
+
+    @LoginFailed
+    Scenario:
+      Given Open Bukalapak
+      Then Go To Login Page
+      Then Input Wrong Password
+      Then Compare Failed Login

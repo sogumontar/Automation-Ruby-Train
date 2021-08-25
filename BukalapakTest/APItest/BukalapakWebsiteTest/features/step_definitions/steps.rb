@@ -6,6 +6,7 @@ driver = Selenium::WebDriver.for :chrome
 link = "https://www.bukalapak.com/"
 email = "hendrasimz92@gmail.com"
 password = "Simangunsong77!"
+wrongPassword = "simangunsong"
 Given("Open Bukalapak") do
   driver.navigate.to link
 end
@@ -32,7 +33,16 @@ Then("Go To Login Page") do
   sleep(2)
   driver.find_element(:xpath, '//*[@id="submit_button"]').click
   sleep(2)
+
+end
+Then ("Input True Password") do
   driver.find_element(:xpath, '//*[@id="input-password"]').send_keys password
+  driver.find_element(:xpath, '//*[@id="btn-login"]').click
+  sleep(3)
+end
+
+Then ("Input Wrong Password") do
+  driver.find_element(:xpath, '//*[@id="input-password"]').send_keys wrongPassword
   driver.find_element(:xpath, '//*[@id="btn-login"]').click
   sleep(3)
 end
@@ -42,4 +52,11 @@ Then("Compare After Login") do
   puts urlNya
   expect(urlNya).to eq("https://www.bukalapak.com/?flash=you_login")
 end
+
+Then("Compare Failed Login") do
+  urlNya = driver.current_url
+  puts urlNya
+  expect(urlNya).to eq("https://accounts.bukalapak.com/login")
+end
+
 
