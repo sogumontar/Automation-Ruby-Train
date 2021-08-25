@@ -28,3 +28,12 @@
       Then Input True Password
       Then Go To Search
       Then Compare After Search
+
+    @AddToCartSuccess
+    Scenario:
+      Given Open Bukalapak
+      Then Go To Login Page
+      Then Input True Password
+      Then Go To Search
+      Then I Add To Cart
+      Then Compare After Cart
