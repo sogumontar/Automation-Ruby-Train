@@ -25,7 +25,6 @@ Then("Submit Form Login") do
     
     urlNya = driver.current_url
     puts urlNya
-<<<<<<< HEAD
     expect(urlNya).to eq("https://www.amazon.com/ap/signin")
 end
 
@@ -45,8 +44,5 @@ Then("I Submit Form Login") do
     urlNya = driver.current_url
     puts urlNya
     expect(urlNya).to eq("https://www.amazon.com/ap/signin")
-=======
-    expect(urlNya).not_to eq("https://www.amazon.com/?ref_=nav_ya_signin&")
->>>>>>> 4569ca852f5e96192a50d262dcbea19af301a1df
     
 end

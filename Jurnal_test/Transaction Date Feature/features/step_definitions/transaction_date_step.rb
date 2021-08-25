@@ -47,16 +47,17 @@ end
 
 Then("I Select transaction date by selection date modal") do
     driver.find_element(:xpath,'//*[@id="vnav-sales-link"]/span').click
-    driver.find_element(:xpath,'//*[@id="tab-1"]/div[2]/div/div[2]/a[1]').click
+    driver.find_element(:xpath,'/html/body/div[2]/div[4]/nav/div[1]/ul/li[1]/a').click
     
-    driver.find_element(:xpath,'//*[@id="main_form"]/div[3]/div[2]/div/div[1]/div/span').click
+    driver.find_element(:xpath,'//*[@id="main_form"]/div[3]/div[2]/div/div[1]/div/span/i').click
     
-    driver.find_element(:xpath,'//*[@id="modj"]/div[36]/div[1]/table/thead/tr[2]/th[3]').click
+    # driver.find_element(:xpath,'//*[@id="modj"]/div[20]/div[1]/table/tfoot/tr[1]/th').click
+    # driver.find_element(:xpath,'//*[@id="modj"]/div[36]/div[1]/table/thead/tr[2]/th[3]').click
 
-    driver.find_element(:xpath,'//*[@id="modj"]/div[36]/div[1]/table/thead/tr[2]/th[2]').click
-    sleep(1)
-    driver.find_element(:xpath,'//*[@id="due_date"]/div/span').click
-    driver.find_element(:xpath,'//*[@id="modj"]/div[36]/div[1]/table/tbody/tr[5]/td[2]').click
+    # driver.find_element(:xpath,'//*[@id="modj"]/div[36]/div[1]/table/thead/tr[2]/th[2]').click
+    # sleep(1)
+    # driver.find_element(:xpath,'//*[@id="due_date"]/div/span').click
+    # driver.find_element(:xpath,'//*[@id="modj"]/div[36]/div[1]/table/tbody/tr[5]/td[2]').click
     sleep(5)
 
     urlNya = driver.current_url
