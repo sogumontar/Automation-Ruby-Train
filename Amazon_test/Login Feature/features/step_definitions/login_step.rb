@@ -44,5 +44,5 @@ Then("I Submit Form Login") do
     urlNya = driver.current_url
     puts urlNya
     expect(urlNya).to eq("https://www.amazon.com/ap/signin")
-    
+
 end
