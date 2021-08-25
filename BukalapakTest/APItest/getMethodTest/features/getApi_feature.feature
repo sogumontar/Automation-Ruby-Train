@@ -4,3 +4,8 @@ Feature: Open Amazon Site
   Scenario:
     Given Access URI
     Then Compare
+
+  @PostApi
+  Scenario:
+    Given Access post URI
+    Then  Compare result
